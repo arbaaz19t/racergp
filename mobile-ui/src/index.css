@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00e5ff;
+  --color-neon-blue: #2979ff;
+  --color-neon-orange: #ff6d00;
+  --color-glass: rgba(8, 12, 20, 0.72);
+  --color-glass-border: rgba(0, 229, 255, 0.18);
+  --font-display: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #050810;
+  font-family: var(--font-display);
+  color: #fff;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(10, 14, 24, 0.82), rgba(6, 10, 18, 0.65));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.14);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.glass-orange {
+  border-color: rgba(255, 109, 0, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(255, 109, 0, 0.08);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6), 0 0 20px rgba(0, 229, 255, 0.25);
+}
+
+.neon-text-orange {
+  text-shadow: 0 0 8px rgba(255, 109, 0, 0.6), 0 0 20px rgba(255, 109, 0, 0.25);
+}
+
+.scroll-hide::-webkit-scrollbar { display: none; }
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(0, 229, 255, 0.3); }
+  50% { box-shadow: 0 0 24px rgba(0, 229, 255, 0.55); }
+}
+
+@media (orientation: portrait) {
+  .portrait-hint { display: flex !important; }
+}
